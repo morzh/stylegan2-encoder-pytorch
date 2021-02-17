@@ -21,7 +21,7 @@ class LossProvider():
     def load_state_dict(self, filename):
         current_dir = os.path.dirname(__file__)
         path = os.path.join(current_dir, 'weights', filename)
-        return torch.load(path, map_location='cpu')
+        return torch.load(path, map_location='gpu')
     
     def get_loss_function(self, model, colorspace='RGB', reduction='sum', deterministic=False, pretrained=True, image_size=None):
         """
